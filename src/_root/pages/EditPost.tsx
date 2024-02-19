@@ -1,7 +1,6 @@
 import PostForm from '@/components/forms/PostForm';
 import Loader from '@/components/shared/Loader';
 import { useGetPostById } from '@/lib/react-query/queriesAndMutations';
-import React from 'react'
 import { useParams } from 'react-router-dom';
 
 const EditPost = () => {
@@ -29,7 +28,7 @@ const EditPost = () => {
           <h2 className="h3-bold md:h2-bold text-left w-full">Edit Post</h2>
         </div>
 
-        {isLoading ? <Loader /> : <PostForm action="Update" post={post} />}
+        {isLoading ? <Loader /> : <PostForm  post={post} />}
       </div>
     </div>
   );
