@@ -1,12 +1,16 @@
-import GridPostList from '@/components/shared/GridPostList';
-import Loader from '@/components/shared/Loader';
-import PostStats from '@/components/shared/PostStats';
-import { Button } from '@/components/ui/button';
-import { useUserContext } from '@/context/AuthContext';
-import { useDeletePost, useGetPostById, useGetUserPosts } from '@/lib/react-query/queriesAndMutations';
-import { multiFormatDateString } from '@/lib/utils';
-import React from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from "react-router-dom";
+
+import { Button } from "@/components/ui";
+import { Loader } from "@/components/shared";
+import { GridPostList, PostStats } from "@/components/shared";
+
+import {
+  useGetPostById,
+  useGetUserPosts,
+  useDeletePost,
+} from "@/lib/react-query/queries";
+import { multiFormatDateString } from "@/lib/utils";
+import { useUserContext } from "@/context/AuthContext";
 
 const PostDetails = () => {
   const navigate = useNavigate();
